@@ -209,15 +209,28 @@ FROM sozyazari so INNER JOIN x ON so.yazarno = x.yazarno
 ORDER BY x.toplam DESC LIMIT 1;  
 </pre>
 <pre>
-SELECT so.*, COUNT(s.sarkino) AS 'toplam'  
-FROM sozyazari so INNER JOIN sarki s ON s.yazarno = so.yazarno  
-GROUP BY so.yazarno  
-ORDER BY COUNT(s.sarkino) DESC LIMIT 1;  
+WITH
+x AS(
+	SELECT yazarno, COUNT(sarkino) sayi
+	FROM sarki s
+	GROUP BY yazarno
+	),
+y AS (
+	SELECT x1.sayi, x1.yazarno
+	FROM x x1, x x2
+	WHERE x1.sayi < x2.sayi
+)
+(SELECT yazarno FROM sozyazari)
+EXCEPT
+(SELECT yazarno FROM y)
 </pre>
 
 RA:  
+![9-1](https://user-images.githubusercontent.com/52275789/146692435-ee5af99e-5b37-4642-8871-6684f2ac010b.png)
 
 Sonuç:  
+![9-2](https://user-images.githubusercontent.com/52275789/146692436-7b2dc9b5-4f1e-4780-8b6a-d6710779a0c2.png)
+
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ### 10-) En az iki şarkı bestelemiş olan bestecilerin bestecino’larını aynı tabloyu kendisi ile kartezyen çarpım yaparak çözünüz. 
 
@@ -233,8 +246,14 @@ SELECT DISTINCT s1.bestecino, COUNT(s1.bestecino) + 1 AS Toplam
 FROM sarki s1, sarki s2  
 WHERE s1.sarkino != s2.sarkino and s1.bestecino=s2.bestecino  
 GROUP BY s1.sarkino;  </pre>
+<pre>
+SELECT DISTINCT s1.bestecino
+FROM sarki s1, sarki s2
+WHERE s1.bestecino = s2.bestecino AND s1.sarkino != s2.sarkino;</pre>
 
-RA:  
-
+RA: 
+![10-1](https://user-images.githubusercontent.com/52275789/146692788-a1669b85-8f1f-4f42-8415-a90fa421794e.png)
+ 
 Sonuç:  
+![10-2](https://user-images.githubusercontent.com/52275789/146692797-8d3ea53d-57d3-4715-a1b8-6115a16b0b2f.png)
 
