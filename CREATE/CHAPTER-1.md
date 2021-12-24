@@ -1,4 +1,4 @@
-CREATE DATABASE
+#CREATE DATABASE
 <pre>
 USE odev1;
 
@@ -57,7 +57,7 @@ FOREIGN KEY(sarkicino) REFERENCES sarkici(sarkicino),
 PRIMARY KEY(albumno, sarkino)); </pre>
 
 
-INSERT
+#INSERT
 <pre>
 DELETE FROM albumdekisarki;
 DELETE FROM album;
