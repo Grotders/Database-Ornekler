@@ -1,4 +1,4 @@
-# ODEV 3
+# ODEV 4
 more [patika](https://app.patika.dev/courses/sql/Odev4)
 
 ### 1-) film tablosunda bulunan replacement_cost sütununda bulunan birbirinden farklı değerleri sıralayınız.

@@ -1,5 +1,5 @@
-
-
+# ODEV 6
+more [patika](https://app.patika.dev/courses/sql/Odev6)
 
 ### 1-) film tablosunda bulunan rental_rate sütunundaki değerlerin ortalaması nedir?
 ``` SQL

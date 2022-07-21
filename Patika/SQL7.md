@@ -1,6 +1,5 @@
-
-
-
+# ODEV 7
+more [patika](https://app.patika.dev/courses/sql/Odev7)
 
 ### 1-) film tablosunda bulunan filmleri rating değerlerine göre gruplayınız.
 ``` SQL
