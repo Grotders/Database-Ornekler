@@ -1,5 +1,5 @@
 # CREATE DATABASE
-<pre>
+``` SQL
 USE odev1;
 
 DROP TABLE IF EXISTS albumdekiSarki;
@@ -53,12 +53,13 @@ CREATE TABLE albumdekiSarki
 (albumno INTEGER(5) NOT NULL,
 sarkino INTEGER(5) NOT NULL,
 sira INTEGER(3),
-FOREIGN KEY(sarkicino) REFERENCES sarkici(sarkicino),
-PRIMARY KEY(albumno, sarkino)); </pre>
+FOREIGN KEY(sarkino) REFERENCES sarki(sarkino),
+PRIMARY KEY(albumno, sarkino)); 
+```
 
 
 # INSERT
-<pre>
+``` SQL
 DELETE FROM albumdekisarki;
 DELETE FROM album;
 DELETE FROM sarkici;
@@ -106,7 +107,7 @@ INSERT INTO sarki VALUES (12, 'Hysteria', 'electronic rock', 226, 10, 10);
 INSERT INTO sarki VALUES (13, 'Time Is Running Out', 'electronic rock', 241, 10, 10);
 INSERT INTO sarki VALUES (14, 'Supermassive Black Hole', 'electronic rock', 210, 10, 10);
 INSERT INTO sarki VALUES (15, 'Starlight', 'electronic rock', 245, 10, 10);
-INSERT INTO sarki VALUES (15, 'What's Going On', 'soul', 231, 4, 4);
+INSERT INTO sarki VALUES (16, "What's Going On", 'soul', 231, 4, 4);
 
 
 INSERT INTO sarkici VALUES (1, 'Fiona Apple', 'rock', '1977-09-13', 'new york city');
@@ -130,7 +131,7 @@ INSERT INTO album VALUES (6, 'Diamond Life', 1983, 16.94, 7, 10000000);
 INSERT INTO album VALUES (7, 'A Rush of Blood to the Head', 2001, 8.31, 8, 15000000);
 INSERT INTO album VALUES (8, 'Superunknown', 1993, 5.99, 9, 9000000);
 INSERT INTO album VALUES (9, 'The Resistance', 2008, 9.99, 10, 45000000);
-INSERT INTO album VALUES (10, 'What's Going On', 1971, 3.99, 4, 9900000);
+INSERT INTO album VALUES (10, "What's Going On", 1971, 3.99, 4, 9900000);
 
 
 INSERT INTO albumdekiSarki VALUES (1, 1, 1);
@@ -148,4 +149,4 @@ INSERT INTO albumdekiSarki VALUES (9, 13, 4);
 INSERT INTO albumdekiSarki VALUES (9, 14, 5);
 INSERT INTO albumdekiSarki VALUES (9, 15, 6);
 INSERT INTO albumdekiSarki VALUES (10, 16, 1);
-</pre>
+```
